@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Logs and environment
+*.log
+.env
+.env.local
+.DS_Store
+
+# Backups & temp files
+*.bak
+*.tmp
