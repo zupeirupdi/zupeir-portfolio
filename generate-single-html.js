@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
-const distDir = '/home/zupeir/zupeir-portfolio/dist';
+const rootDir = process.cwd();
+const distDir = path.join(rootDir, 'dist');
 const assetsDir = path.join(distDir, 'assets');
 
 const files = fs.readdirSync(assetsDir);
@@ -47,7 +48,7 @@ ${jsContent}
   </body>
 </html>`;
 
-fs.writeFileSync('/home/zupeir/zupeir-portfolio/portfolio-single.html', singleHtml);
-fs.writeFileSync('/home/zupeir/zupeir-portfolio/dist/portfolio-single.html', singleHtml);
-fs.writeFileSync('/home/zupeir/zupeir-portfolio/dist/index.html', singleHtml);
+fs.writeFileSync(path.join(rootDir, 'portfolio-single.html'), singleHtml);
+fs.writeFileSync(path.join(distDir, 'portfolio-single.html'), singleHtml);
+fs.writeFileSync(path.join(distDir, 'index.html'), singleHtml);
 console.log("Successfully generated standalone portfolio-single.html and dist/index.html!");
